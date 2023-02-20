@@ -1,3 +1,20 @@
 .App footer {
   font-size: smaller;
 }
+
+.App header {
+  font-size: xx-large;
+}
+
+header,
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Handlee", cursive;
+}
+
+.App {
+  background: rgba(157, 195, 179, 0.566);
+  font-family: "Quicksand", sans-serif;
+}
