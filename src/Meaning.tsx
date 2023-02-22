@@ -19,6 +19,12 @@ export default function Meaning(props) {
             );
           })}
         </ol>
+        {/* <h4>Synonyms</h4>
+        <ul className="text-decoration-none">
+          {props.meaning.synonyms.map(function (synonym, index) {
+            return <li key={index}>{synonym}</li>;
+          })}
+        </ul> */}
       </div>
     );
   }

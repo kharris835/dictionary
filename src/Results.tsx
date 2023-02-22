@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import Meaning from "./Meaning";
 import Phonetics from "./Phonetics";
+import "./Results.css";
 
 export default function Results(props) {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState(0);
 
   console.log(active);
 
-  function handleClick(partOfSpeech) {
-    setActive(partOfSpeech);
+  function handleClick(index) {
+    setActive(index);
   }
 
   if (props.results) {
     return (
-      <div>
+      <div className="">
         <div>
           <h2 className="text-capitalize">{props.results.word}</h2>
         </div>
@@ -24,32 +25,31 @@ export default function Results(props) {
             </span>
           );
         })}
-        <div className="d-flex mt-2 mb-2">
+        <div className="results ps-3 pt-2">
+          <div className="d-flex mt-2 mb-2">
+            {props.results.meanings.map(function (meaning, index) {
+              return (
+                <div key={index}>
+                  <button
+                    className="partOfSpeechBtn btn ps-4 pe-4"
+                    onClick={function () {
+                      handleClick(index);
+                    }}
+                  >
+                    {meaning.partOfSpeech}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
           {props.results.meanings.map(function (meaning, index) {
             return (
               <div key={index}>
-                <button
-                  className="btn btn-info ps-5 pe-5"
-                  onClick={function () {
-                    handleClick(meaning.partOfSpeech);
-                  }}
-                >
-                  {meaning.partOfSpeech}
-                </button>
+                <Meaning meaning={meaning} active={active === index} />
               </div>
             );
           })}
         </div>
-        {props.results.meanings.map(function (meaning, index) {
-          return (
-            <div key={index}>
-              <Meaning
-                meaning={meaning}
-                active={active === meaning.partOfSpeech}
-              />
-            </div>
-          );
-        })}
       </div>
     );
   }
