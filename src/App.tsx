@@ -10,7 +10,7 @@ function App() {
         <main>
           <Dictionary />
         </main>
-        <footer className="mt-3">
+        <footer className="mt-3 text-center">
           <a href="https://github.com/kharris835/dictionary">Open-source</a>{" "}
           code by{" "}
           <a

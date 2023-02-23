@@ -31,7 +31,7 @@ export default function Results(props) {
               return (
                 <div key={index}>
                   <button
-                    className={`partOfSpeechBtn btn ps-4 pe-4 ${
+                    className={`partOfSpeechBtn btn ps-5 pe-5 ${
                       active === index ? "activeBtn" : ""
                     }`}
                     onClick={function () {

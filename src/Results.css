@@ -1,18 +1,18 @@
 .partOfSpeechBtn {
-  background: rgba(223, 229, 244, 0.575);
-  border: 2px solid rgba(107, 142, 218, 0.322);
+  background: var(--secondary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 0px;
 }
 
 .partOfSpeechBtn:hover {
-  background: rgba(107, 142, 218, 0.322);
+  background: var(--primary-color);
 }
 
 .activeBtn {
-  background: rgba(107, 142, 218, 0.322);
+  background: var(--primary-color);
 }
 
 .results {
-  background: rgba(107, 142, 218, 0.322);
+  background: var(--secondary-color);
   border-radius: 12px;
 }

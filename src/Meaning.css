@@ -1,5 +1,5 @@
 .synonyms {
-  border: 2px solid rgba(107, 142, 218, 0.322);
+  border: 2px solid var(--primary-color);
   list-style-type: none;
   border-radius: 14px;
 }
