@@ -12,7 +12,7 @@ export default function Meaning(props) {
           {props.meaning.definitions.map(function (definition, index) {
             return (
               <li key={index}>
-                <p className="me-3">
+                <p className="me-3 ms-2">
                   {definition.definition}
                   <br />
                   <em>{definition.example}</em>

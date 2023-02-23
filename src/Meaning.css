@@ -3,3 +3,7 @@
   list-style-type: none;
   border-radius: 14px;
 }
+
+ol > li::marker {
+  font-weight: bold;
+}
