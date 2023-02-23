@@ -15,6 +15,7 @@ function App() {
           <a
             href="https://spontaneous-croquembouche-c44b06.netlify.app/"
             target="_blank"
+            rel="noreferrer"
           >
             Kelsie Harris
           </a>
