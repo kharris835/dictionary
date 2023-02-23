@@ -25,13 +25,15 @@ export default function Results(props) {
             </span>
           );
         })}
-        <div className="results ps-3 pt-2">
+        <div className="results mt-2 ps-3 pt-3 pb-3">
           <div className="d-flex mt-2 mb-2">
             {props.results.meanings.map(function (meaning, index) {
               return (
                 <div key={index}>
                   <button
-                    className="partOfSpeechBtn btn ps-4 pe-4"
+                    className={`partOfSpeechBtn btn ps-4 pe-4 ${
+                      active === index ? "activeBtn" : ""
+                    }`}
                     onClick={function () {
                       handleClick(index);
                     }}

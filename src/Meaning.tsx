@@ -1,16 +1,18 @@
 import React from "react";
+import "./Meaning.css";
 
 export default function Meaning(props) {
   console.log(props.meaning);
+  console.log(Object.keys(props.meaning.synonyms).length);
+
   if (props.active) {
     return (
       <div>
-        {/* <button class="btn btn-dark">{props.meaning.partOfSpeech}</button> */}
-        <ol type="1">
+        <ol type="1" className="mb-4">
           {props.meaning.definitions.map(function (definition, index) {
             return (
               <li key={index}>
-                <p>
+                <p className="me-3">
                   {definition.definition}
                   <br />
                   <em>{definition.example}</em>
@@ -19,12 +21,23 @@ export default function Meaning(props) {
             );
           })}
         </ol>
-        {/* <h4>Synonyms</h4>
-        <ul className="text-decoration-none">
-          {props.meaning.synonyms.map(function (synonym, index) {
-            return <li key={index}>{synonym}</li>;
-          })}
-        </ul> */}
+        {Object.keys(props.meaning.synonyms).length > 0 && (
+          <>
+            <h4>Synonyms</h4>
+            <ul className="d-flex flex-wrap pt-1 ps-0">
+              {props.meaning.synonyms.map(function (synonym, index) {
+                return (
+                  <li
+                    className="synonyms text-capitalize text-center ps-2 pe-2 mb-2 me-2 ms-2"
+                    key={index}
+                  >
+                    {synonym}
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        )}
       </div>
     );
   }
