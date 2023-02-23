@@ -5,7 +5,7 @@ import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary() {
-  const [keyword, setKeyword] = useState("nature");
+  const [keyword, setKeyword] = useState("sky");
   const [results, setResults] = useState(null);
   const [photos, setPhotos] = useState(null);
 
