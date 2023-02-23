@@ -44,6 +44,7 @@ export default function Dictionary() {
     const headers = { Authorization: pexelsApiKey };
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+    // eslint-disable-next-line
   }, []);
 
   return (
