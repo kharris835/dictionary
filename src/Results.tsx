@@ -6,8 +6,6 @@ import "./Results.css";
 export default function Results(props) {
   const [active, setActive] = useState(0);
 
-  console.log(active);
-
   function handleClick(index) {
     setActive(index);
   }

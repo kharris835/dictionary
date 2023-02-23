@@ -2,9 +2,6 @@ import React from "react";
 import "./Meaning.css";
 
 export default function Meaning(props) {
-  console.log(props.meaning);
-  console.log(Object.keys(props.meaning.synonyms).length);
-
   if (props.active) {
     return (
       <div>
