@@ -14,7 +14,7 @@ export default function Results(props) {
 
   if (props.results) {
     return (
-      <div className="">
+      <div>
         <div>
           <h2 className="text-capitalize">{props.results.word}</h2>
         </div>

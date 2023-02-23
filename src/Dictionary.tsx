@@ -1,27 +1,39 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
   }
 
-  function handleResponse(response) {
-    console.log(response.data[0]);
-    // console.log(response.data[0].meanings[0].definition[0]);
+  function handleDictionaryResponse(response) {
+    // console.log(response.data[0]);
     setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
+    console.log(response.data.photos);
+    setPhotos(response.data.photos);
   }
 
   function search(event) {
     event.preventDefault();
 
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse);
+
+    const pexelsApiKey =
+      "2JGZoQ4TqoAIPEwfB415Horej3wlchcAYDoZEqd7Dp2u90GXGMt16Nk8";
+    const headers = { Authorization: pexelsApiKey };
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   return (
@@ -36,6 +48,7 @@ export default function Dictionary() {
         />
       </form>
       <Results results={results} />
+      <Photos photos={photos} keyword={keyword} />
     </div>
   );
 }
