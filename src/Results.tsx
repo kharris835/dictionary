@@ -24,12 +24,12 @@ export default function Results(props) {
           );
         })}
         <div className="results mt-2 ps-3 pt-3 pb-3">
-          <div className="d-flex mt-2 mb-2">
+          <div className="d-flex mt-2 mb-2 d-flex flex-wrap">
             {props.results.meanings.map(function (meaning, index) {
               return (
                 <div key={index}>
                   <button
-                    className={`partOfSpeechBtn btn ps-5 pe-5 ${
+                    className={`partOfSpeechBtn btn  ${
                       active === index ? "activeBtn" : ""
                     }`}
                     onClick={function () {
